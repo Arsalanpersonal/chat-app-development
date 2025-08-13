@@ -1,2 +1,2 @@
-const app = require("./src/app"); // import your express app
-module.exports = app;
+import app from "./src/app"; // import your express app
+export default app;
