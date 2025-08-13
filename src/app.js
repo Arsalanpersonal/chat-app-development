@@ -34,3 +34,5 @@ server.listen(PORT, () => {
     console.log(`Server running on ip: http://127.0.0.1:${PORT}`);
     connectDB();
 });
+
+module.exports = app; // Export the app for testing or further use
