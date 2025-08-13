@@ -7,12 +7,12 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
     cors: {
-        // origin: [
-        //     process.env.WEB_FRONTEND_URL,
-        //     process.env.APP_FRONTEND_URL || "http://localhost:5001",
-        //     "http://localhost:3000", // Add localhost for development
-        //     "*" // Consider removing this in production
-        // ],
+        origin: [
+            process.env.WEB_FRONTEND_URL,
+            process.env.APP_FRONTEND_URL || "http://localhost:5001",
+            "http://localhost:3000", // Add localhost for development
+            // "*" // Consider removing this in production
+        ],
         credentials: true,
         methods: ["GET", "POST"]
     }
