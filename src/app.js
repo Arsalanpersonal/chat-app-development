@@ -36,4 +36,4 @@ server.listen(PORT, () => {
     connectDB();
 });
 
-export default app;
+// No export needed since we're directly running the server

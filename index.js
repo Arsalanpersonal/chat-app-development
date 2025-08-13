@@ -1,2 +1,1 @@
-import app from "./src/app"; // import your express app
-export default app;
+import './src/app.js';
