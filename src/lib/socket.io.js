@@ -20,6 +20,8 @@ const io = new Server(server, {
         credentials: true,
         methods: ["GET", "POST"]
     }
+
+    // testing
 });
 
 const userSocketMap = {}; //{userId: socket.id}
