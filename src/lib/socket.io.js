@@ -1,10 +1,8 @@
 import { Server } from "socket.io";
 import express from "express";
 import http from "http";
-<<<<<<< HEAD
-=======
 import { decodeHash } from "./util/appHasher.js"; // Adjust the import path as necessary
->>>>>>> e5b5186 (fresh commit)
+
 
 const app = express();
 const server = http.createServer(app);
@@ -13,13 +11,11 @@ const io = new Server(server, {
     cors: {
         origin: [
             process.env.WEB_FRONTEND_URL,
-<<<<<<< HEAD
+
             process.env.APP_FRONTEND_URL || "http://localhost:5001",
             "http://localhost:3000", // Add localhost for development
             // "*" // Consider removing this in production
-=======
             process.env.APP_FRONTEND_URL
->>>>>>> e5b5186 (fresh commit)
         ],
         credentials: true,
         methods: ["GET", "POST"]
@@ -35,12 +31,10 @@ export function getUserSocketId(userId) {
 io.on("connection", (socket) => {
     console.log("A user connected with socket.io", socket.id);
 
-<<<<<<< HEAD
-    const userId = socket.handshake.query.userId;
-=======
+
     const hash = socket.handshake.query.user_token;
     const userId = decodeHash(hash)?.userId;
->>>>>>> e5b5186 (fresh commit)
+
 
     if (userId && userId !== 'null' && userId !== 'undefined') {
         userSocketMap[userId] = socket.id;
