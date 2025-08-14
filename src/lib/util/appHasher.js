@@ -20,6 +20,17 @@ export const generateToken = (userId, res) => {
 
 }
 
+<<<<<<< HEAD
+=======
+export const decodeHash = (hash) => {
+    try {
+        return jwt.verify(hash, process.env.APP_SECRET);
+    } catch (error) {
+        return null;
+    }
+}
+
+>>>>>>> e5b5186 (fresh commit)
 export const generateEmailHash = (user, otp_code) => {
 
     const hash = jwt.sign({ user, otp_code: otp_code }, process.env.EMAIL_HASHER, { expiresIn: "1d" });
